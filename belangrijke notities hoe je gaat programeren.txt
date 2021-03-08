@@ -1,0 +1,55 @@
+BESTURING
+omhoog, omlaag, links, rechts
+via pijltjes op het toetsenboard
+via svg boxes voor mobile...(WAT IS DAT??)
+
+HTML
+
+DE SLANG
+
+Kenmerken:
+
+slang heeft een kleur
+slang heeft richting
+slang heeft een positie
+positie (x,y)
+slang snelheid
+lengte
+ogen?
+slang vorm (einde begin bochtjes, oftewel de rand van het lichaam)
+
+
+Events: 
+wordt groter als je de blauwe punt aanraakt
+als hij tegen zichzelf aangaat gaat ie dood (doet ie nog niet!)
+als hij tegen de border aangaat gaat ie dood (doet ie nog niet!)
+slang kan niet tegen zichzelf bewegen
+
+
+HET SPEELVELD
+
+kenmerken:
+
+Speelveld heeft een vorm (vierkant met een border)
+bestaat uit blokjes
+blokjes hebben een vorm  (vierkant met een border)
+heeft een breedte en een aantal blokes naast elkaar
+Heeft een hoogte en een aantal blokjes onder elkaar
+
+
+ETEN/CANDY/BLAUWE STIP
+
+kenmerken:
+
+Laat slang langer worden.
+Je krijgt een score als je het eten (Er is in deze geval geen winnaar, dit is gewoon je persoonlijke record te verslaan)
+heeft een positie (x,y)
+Eten verdwijnt op het moment dat het opgegeten wordt.
+Eten wordt op een nieuw neergezet als het wordt opgegeten.
+Eten wordt neergezet op een plek waar de slang niet is.
+
+SCORE
+
+TIJD
+
+SNELHEID
