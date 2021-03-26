@@ -89,15 +89,21 @@ textarea {
 
 
 
-.cell{/*required, otherwise main js wouldn't work*/ /*the gray boxes. find class cell in main.js*/
-  width: 30px;
-  height: 30px;
-  border: 1px solid black;
-  background-color: #aaaaaa;
-  display: inline-block;
-  font-size: 100%;
-  text-align: center;
-}
+   #board{
+    display:inline;
+    background-color:  #aaaaaa;
+  }
+  
+  .cell{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    background-color:  #aaaaaa;
+    display:inline;
+    float:left;
+    font-size: 8px;
+  }
+
 #value_i8{/*added id='value'"+i+" in line 13 main.js* the i defines the number. because the limit blocks worth is 10. I choose number 5 between number 0 and 9*/
   background-color: crimson;
 }
