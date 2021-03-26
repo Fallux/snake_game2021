@@ -1,13 +1,8 @@
-//DONE: slang kan botsen tegen zichzelf
-//DONE: bug eruit halen als slang tegen de muur aan komt...
-//DONE: slang mag niet tegen zichzelf in bewegen
 //TODO: css styling verbeteren (positie midden op het scherm)
-//DONE: slang hoofd en staart einde
 //TODO: slang staart einde
 //TODO: game is responsive
-//DONE: snake steeds sneller op basis van lengte (en tijd!)
-
 //TODO: game online zetten
+//BUG: blauwe bal kan soms in de positie van de slange staart voorkomen  
 
 let boardSize = 13;
 let board = document.getElementById("board");//dit is het bord
@@ -33,23 +28,13 @@ function drawBoard() {
 
 function clearBoard() {
     //clearBoard (maak het bord leeg door de class van alle blokjes terug te zetten naar cell)
-    
-    // for (let j = 0; j < boardSize; j++) {
-    //     for (let i = 0; i < boardSize; i++) {
-    //         let snakeId = "x" + i + "y" + j;
-    //         document.getElementById(snakeId).className = "cell";
-    //     }
-    // }
-    
-
-    // bovenstaande kan met minder code door dit te doen....
     document.querySelectorAll('.cell').forEach(function (cell) {
         cell.className = "cell";
     });
 
 }
 
-//updatesnakePosition
+// updatesnakePosition
 
 function updatesnakePosition() {
 
@@ -108,9 +93,9 @@ function collisionCheck() {
 
 //drawSnake
 
-function drawSnake() {
-    //let snakeHeadsnakePosition = "x" + snakePosition.x + "y" + snakePosition.y;
-    //document.getElementById(snakeHeadsnakePosition).className += " bodySnake";
+function drawSnake() {//dit uitgezet anders gaat de snake te snel
+    // let snakeHeadsnakePosition = "x" + snakePosition.x + "y" + snakePosition.y;
+    // document.getElementById(snakeHeadsnakePosition).className += " bodySnake";
     for (let i = 0; i < snakePositions.length; i++) {
         if (i == 0) {
             //TODO: staart wordt getekend
@@ -124,7 +109,7 @@ function drawSnake() {
             document.getElementById(snakePositions[i]).className += " bodyHead";
             document.getElementById(snakePositions[i]).className += " bodyHeadDirection" + direction;
         }
-        //console.log(snakePositions[i]);
+        console.log(snakePositions[i]);
         document.getElementById(snakePositions[i]).className += " bodySnake";
     }
 
@@ -151,10 +136,10 @@ function drawFood() {
 
 function snakeEatsFood() {
     if (snakePosition.x == foodPosition.x && snakePosition.y == foodPosition.y) {
-        //console.log("Yummy!!!!!!");
+        console.log("Yummy!!!!!!");
         foodIsEaten = true;
         snakePositions.push("x" + snakePosition.x + "y" + snakePosition.y);
-        //console.log(snakePositions);
+        console.log(snakePositions);
     }
 }
 
@@ -176,8 +161,8 @@ function gameLoop() {
     if (timeoutTime < 100) {
         timeoutTime = 100;
     }
-    //console.log(timeoutTime);
-    setTimeout(gameLoop, timeoutTime);
+    // console.log(timeoutTime); //start de tijd in console
+    setTimeout(gameLoop, timeoutTime);//Deze moet niet uitgezet worden want dan beweegt de slang niet
 }
 
 //start Game here......
@@ -185,9 +170,6 @@ function gameLoop() {
 drawBoard();
 
 // setInterVal werkt niet als je de slang sneller wilt laten gaan...
-//setInterval(gameLoop, 550-snakePositions.length*100);//500 450 400 350 300
-
-//
 // TODO: werk met window.requestAnimationFrame i.p.v. setInterval
 //
 
@@ -223,6 +205,5 @@ window.addEventListener("keydown", function (event) {
 
     }
 
-    // TODO: voeg WASD toe (voor de echte gamers onder ons....)
-    keyboardInput.innerHTML = "direction:" + direction;
+   keyboardInput.innerHTML = "direction:" + direction;
 }, true);
