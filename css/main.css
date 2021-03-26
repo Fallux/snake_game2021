@@ -116,6 +116,67 @@ textarea {
   background-color: red;
   border-radius: 50%;
 }
+/*
+#x11y11{
+  background: green;
+}
+#x10y10{
+  background: yellow;
+}
+
+#x12y0{
+  background: blue;
+}
+
+#x12y12{
+  background: black;
+}
+*/
+
+.bodySnake{
+  background-color:  red;
+  border-radius: 50%;
+}
+
+.bodyHead{
+  background-color:  rgba(0,0,0,0);
+  border-radius: 50%;
+  border: none;
+  background-image: url(../img/snake_head.png);
+  background-size: contain;
+}
+
+.bodyTail{
+  background-color:  rgba(0,0,0,0);
+  border-radius: 50%;
+  border: none;
+  /*background-image: url(../img/snake_head.png);*/
+  background-size: contain;
+}
+
+.bodyHeadDirection1{
+  transform: rotate(180deg);
+}
+.bodyHeadDirection2{
+  transform: rotate(0deg);
+}
+.bodyHeadDirection3{
+  transform: rotate(270deg);
+}
+.bodyHeadDirection4{
+  transform: rotate(-270deg);
+}
+
+.food{
+  background-color:  blue;
+  border-radius: 50%;
+}
+
+/*
+#x4y6{
+  background-color:  red;
+}
+*/
 
 /* ==========================================================================
    Helper classes
