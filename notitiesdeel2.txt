@@ -1,0 +1,23 @@
+Waarom is de keyboardInput.innerHTML = "right" niet goed?
+
+Hoe werkt die +1 en -1 met de directions?
+(position.x = position.x -1?????)
+
+
+
+
+
+
+dus we mogen wel of geen code gebruiken van deze opnames of van Youtube?
+
+Mijn fout is dat ik fucking dom ben waardoor ik automatisch het vooral moet/ga natypen en copy pasten. Ik kan deze formules niet zo uit het hoofd bedenken en praktisch moet uitvoeren
+
+
+
+
+
+
+gerefectored is iets dat je code overzichterlijker of korter maakt terwijl in de web werking 
+je moet het veld als een tabel met getallen zien
+die -1 gaat een stapje terug
+een +1 gaat een stapje verder\
