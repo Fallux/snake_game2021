@@ -1,20 +1,20 @@
-//TODO: css styling verbeteren (positie midden op het scherm)
-//TODO: slang staart einde
-//TODO: game is responsive
-//TODO: game online zetten
+//UNDONE: css styling verbeteren (positie midden op het scherm)
+//UNDONE: slang staart einde
+//UNDONE: game is responsive
+//UNDONE: game online zetten
 //BUG: blauwe bal kan soms in de positie van de slange staart voorkomen  
 
-let boardSize = 13;
+let boardSize = 10;//bepaald hoe groot het veld moet zijn met de getallen 0-9 in dit geval
 let board = document.getElementById("board");//dit is het bord
-let keyboardInput = document.getElementById("keyboardInput");
+let keyboardInput = document.getElementById("keyboardInput");//dit zorgt ervoor dat je met de pijltoetsen kan besturen
 //let direction = [0,0]; //alternatief
-let direction = 0;
-let foodIsEaten = true;
-let snakePosition = { x: Math.floor(boardSize / 2), y: Math.floor(boardSize / 2) };
-let foodPosition = { x: 0, y: 0 };
+let direction = 0;//Dit is het begin directie het is 0 omdat de slang in het begin niet beweegt
+let foodIsEaten = true;//als het voedsel wordt opgegeten wodt ie niet veranderd van plek maar als de slang het balltje aanraakt word het false en dan gaat er iets gebeuren (het verplaatsen dus)
+let snakePosition = { x: Math.floor(boardSize / 2), y: Math.floor(boardSize / 2) }; //doordat je de horizontale as (x) en de verticale as (y) allebei deelt door 2 komt de slang in het midden uit bij het starten van het spel
+let foodPosition = { x: 0, y: 0 };//hier laat je zien dat het blauwe balletje random wordt verplaatst in tijdens het laden het spel en als de slang het balletje raakt
 
-let snakePositions = [];
-snakePositions.push("x" + snakePosition.x + "y" + snakePosition.y);
+let snakePositions = [];//Dat slaat alle posities van de hele slang op. geen integer = oneindig doorgaan met het voedsel binnen happen
+// snakePositions.push("x" + snakePosition.x + "y" + snakePosition.y);
 
 function drawBoard() {
     //drawBoard (maakt het speelveld dat is opgebouwd uit div elementen met een unieke id)
@@ -41,16 +41,16 @@ function updatesnakePosition() {
     //snakePosition.y += direction[1]; //alternatief
     //snakePosition.x += direction[0]; //alternatief   
 
-    if (direction == 1) {
+    if (direction == 1) {//pijltje naar boven en de slang gaat verder naar boven (y is verticaal en de nummer word van boven naar onder geteld dus -1 = omhoog)
         snakePosition.y = snakePosition.y - 1;
     }
-    if (direction == 2) {
+    if (direction == 2) {//pijltje naar beneden en de slang gaat verder naar beneden (y is verticaal en de nummer word van boven naar onder geteld dus +1 = omlaag)
         snakePosition.y = snakePosition.y + 1;
     }
-    if (direction == 3) {
+    if (direction == 3) {//pijltje naar rechts en de slang gaat verder naar rechts (x is horizontaal en de nummer word van links naar rechts geteld dus +1 = rechts)
         snakePosition.x = snakePosition.x + 1;
     }
-    if (direction == 4) {
+    if (direction == 4) {//pijltje naar links en de slang gaat verder naar links (x is horizontaal en de nummer word van links naar rechts geteld dus -1 = links)
         snakePosition.x = snakePosition.x - 1;
     }
 
@@ -61,7 +61,7 @@ function updatesnakePosition() {
 
 //resetGame
 
-function resetGame() {
+function resetGame() {//hiermee gaat snake naar het middenstartpunt tijdens het restten van het spel
     //direction = [0,0]; //alternatief
     direction = 0;
     snakePosition = { x: Math.floor((boardSize - 1) / 2), y: Math.floor((boardSize - 1) / 2) };
@@ -142,19 +142,16 @@ function snakeEatsFood() {
         console.log(snakePositions);
     }
 }
-
-
-
 //gameLoop
 let timeCounter = 0;
 function gameLoop() {
 
-    updatesnakePosition();
-    collisionCheck();
-    clearBoard();
-    drawFood();
-    drawSnake();
-    snakeEatsFood();
+    updatesnakePosition();//slang beweegt
+    collisionCheck();//kijkt dat de slang ergens tegen aan botst.
+    clearBoard();//maakt bij alle divs de class "cell" aan.
+    drawFood();//maakt de blauwe balletje met gebruik van css
+    drawSnake();//maakt de slang met gebruik van css
+    snakeEatsFood();//checkt als de slang het eten eet.
 
     timeCounter++;
     var timeoutTime = 550 - snakePositions.length * 30 - timeCounter / 2;
