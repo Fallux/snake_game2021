@@ -104,34 +104,6 @@ textarea {
     font-size: 8px;
   }
 
-#value_i8{/*added id='value'"+i+" in line 13 main.js* the i defines the number. because the limit blocks worth is 10. I choose number 5 between number 0 and 9*/
-  background-color: crimson;
-}
-#value_j8{
-  background-color: steelblue;
-}
-#bal{
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  border-radius: 50%;
-}
-/*
-#x11y11{
-  background: green;
-}
-#x10y10{
-  background: yellow;
-}
-
-#x12y0{
-  background: blue;
-}
-
-#x12y12{
-  background: black;
-}
-*/
 
 .bodySnake{
   background-color:  red;
